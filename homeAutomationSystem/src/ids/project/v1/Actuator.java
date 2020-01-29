@@ -14,16 +14,19 @@ public class Actuator implements Device {
 	private int id;
 	
 	public Actuator (String name, String infoConstructor, int id, CategoryActuator category) {
+		
 		this.name=name + "_" + category.getNameCategory();
-		this.infoConstructor=infoConstructor;
-		this.id=id;
-		this.category=category;
+		this.infoConstructor = infoConstructor;
+		this.id = id;
+		this.category = category;
+		 
 	}
 	
 	public Actuator (String name, String genericInfo, int id) {
-		this.name=name;
-		this.infoConstructor=genericInfo;
-		this.id=id;
+		
+		this.name = name;
+		this.infoConstructor = genericInfo;
+		this.id = id;
 	}
 	
 	/**
