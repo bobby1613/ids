@@ -1,15 +1,6 @@
 package ids.project.v1;
 
-public class User {
+public interface User {
 	
-	private String name;
-	private String surname;
-	
-	
-	public User(String name, String surname) {
-		
-		this.name = name;
-		this.surname = surname;
-		
-	}
+	public void login();
 }

@@ -9,8 +9,8 @@ public class Actuator implements Device {
 	
 	private CategoryActuator category;
 	private String name;
-	private boolean state=true;
-	private String infoConstructor;//LUNGHEZZA MASSIMA
+	private boolean state = true; // nella prima versione gli attuatori devono essere sempre attivi
+	private String infoConstructor; //LUNGHEZZA MASSIMA
 	private int id;
 	
 	public Actuator (String name, String infoConstructor, int id, CategoryActuator category) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CategoryActuator extends Category {
 	
-	private ArrayList<OperativeMode> modalities;
+	private ArrayList<OperativeMode> operativeModes;
 	
 	public CategoryActuator(String nameCategory, String infoConstructor) {
 		super(nameCategory, infoConstructor);

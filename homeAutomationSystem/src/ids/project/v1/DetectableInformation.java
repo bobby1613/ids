@@ -21,7 +21,13 @@ public class DetectableInformation {
 		 * Costruttore di default
 		 */
 		public DetectableInformation() {
-			super();
+			
+			name = null;
+			physicalDimension = false;
+			onOff = false;
+			dimensional = false;
+			symbol = null;
+			
 		}
 		
 		/**
@@ -30,14 +36,15 @@ public class DetectableInformation {
 		 * @param physicalDimension se quest'ultimo vale "true", onOff vale "false" e viceversa
 		 */
 		public DetectableInformation(String name, boolean physicalDimension) {	
-			this.name=name;
-				this.physicalDimension=physicalDimension;
-				if (physicalDimension==true) 
-					this.onOff=false;
-				else if(physicalDimension==false)
-					this.onOff=true;
-			this.dimensional=false;
-			this.symbol=null;
+			
+			this.name = name;
+				this.physicalDimension = physicalDimension;
+				if (physicalDimension == true) 
+					this.onOff = false;
+				else if(physicalDimension == false)
+					this.onOff = true;
+			this.dimensional = false;
+			this.symbol = null;
 		}
 		
 		/**
@@ -53,7 +60,8 @@ public class DetectableInformation {
 		 * @param name
 		 */
 		public void setName(String name) {
-			this.name=name;
+			
+			this.name = name;
 		}
 		
 		/**
@@ -61,6 +69,7 @@ public class DetectableInformation {
 		 * @return physicalDimension
 		 */
 		public boolean isPhysicalDimensionType() {
+			
 			return physicalDimension;
 		}
 		
@@ -69,6 +78,7 @@ public class DetectableInformation {
 		 * @return onOff
 		 */
 		public boolean isOnOffType() {
+			
 			return onOff;
 		}
 		
@@ -77,6 +87,7 @@ public class DetectableInformation {
 		 * @return dimensional
 		 */
 		public boolean isDimensional() {
+			
 			return dimensional;
 		}
 		
@@ -84,20 +95,21 @@ public class DetectableInformation {
 		 * 
 		 * @param dimensional
 		 */
-		public void setDimensional(boolean dimensional) { //verificare che sia grandezzafisica prima???
-			if (dimensional==false)
-				this.symbol=PERCENT;
+		public void setDimensional(boolean dimensional) { //verificare che sia grandezza fisica prima???
+			if (dimensional == false)
+				this.symbol = PERCENT;
 		}
 		
 		/**
 		 * 
 		 * @param symbol
 		 */
-		public void setSymbol(String symbol) { //verificare che sia grandezzafisica prima???
-			if (this.dimensional==true)
-				this.symbol=symbol;
+		public void setSymbol(String symbol) {  //verificare che sia grandezza fisica prima???
+			
+			if (this.dimensional == true)
+				this.symbol = symbol;
 			else
-				System.out.println("non possibile assegnare simbolo a grandezza adimensionale"); //eccezione
+				System.out.println("Non e' possibile assegnare simbolo a una grandezza adimensionale"); //eccezione
 		}
 		
 		/**

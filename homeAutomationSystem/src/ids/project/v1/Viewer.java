@@ -1,11 +1,15 @@
 package ids.project.v1;
 
-public class Viewer extends User {
+public class Viewer implements User {
 
-	public Viewer(String name, String surname) {
-		super(name, surname);
-		// TODO Auto-generated constructor stub
+	@Override
+	public void login() {
+		// TODO Auto-generated method stub
+		
+		
 	}
+
+	
 	
 	
 

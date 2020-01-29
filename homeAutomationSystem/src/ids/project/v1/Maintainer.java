@@ -1,14 +1,17 @@
 package ids.project.v1;
 
-public class Maintainer extends User {
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Maintainer implements User {
 	
-	private int id;
-	
-	public Maintainer(String name, String surname, int id) {
+
+	@Override
+	public void login() {
+		// TODO Auto-generated method stub
 		
-		super(name, surname);
-		this.id = id;
-		// TODO Auto-generated constructor stub
+				
+		
 	}
 	
 	

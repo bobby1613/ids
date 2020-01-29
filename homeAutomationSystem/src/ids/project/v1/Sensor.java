@@ -13,22 +13,24 @@ public class Sensor implements Device {
 
 	private CategorySensor category;
 	private String name;
-	private boolean state=true;
+	private boolean state = true;
 	private String infoConstructor; //LUNGHEZZA MASSIMA
 	private int id;
 	private static final Random rand = new Random();
 	
 	public Sensor(String name, String infoConstructor, int id, CategorySensor category) {
-		this.name=name + "_" + category.getNameCategory();
-		this.infoConstructor=infoConstructor;
-		this.id=id;
-		this.category=category;
+		
+		this.name = name + "_" + category.getNameCategory();
+		this.infoConstructor = infoConstructor;
+		this.id = id;
+		this.category = category;
 	}
 	
 	public Sensor(String name, String genericInfo, int id) {
-		this.name=name;
-		this.infoConstructor=genericInfo;
-		this.id=id;
+		
+		this.name = name;
+		this.infoConstructor = genericInfo;
+		this.id = id;
 	}
 	
 	/**
@@ -36,13 +38,15 @@ public class Sensor implements Device {
 	 * @param category
 	 */
 	public void setCategory(CategorySensor category) {
-		if (this.category==null) {
-			this.category=category;
-			this.name=this.name+"_" + this.category.getNameCategory();		
+		
+		if (this.category == null) {
+			this.category = category;
+			this.name = this.name+"_" + this.category.getNameCategory();		
 			}
 		else
-			System.out.println("la categoria gia impostaaaaata");//ECCEZIONE
+			System.out.println("Categoria gia impostata");//ECCEZIONE
 	}
+	
 	/**
 	 * 
 	 * @return
@@ -104,9 +108,11 @@ public class Sensor implements Device {
 	 * Ritorna 
 	 * @return
 	 */
-	public double instaMeasure() {//precondizione categoria:grandezza fisica
-		return 1.0  ;//ASSEGNA CASUALMENTE
+	public double instaMeasure() { //precondizione categoria:grandezza fisica
+		return 1.0  ; //ASSEGNA CASUALMENTE
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "";//DA FAREEEEEEEEEEEEEEEEEEEEEE

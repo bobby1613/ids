@@ -12,14 +12,18 @@ public class CategorySensor extends Category {
 	}
 	
 	//preconditions:nella prima versione ogni categoria di sensore misura al massimo una grandezza fisica
+	
 	public void addInformation(DetectableInformation information) {
-		if (this.informations.isEmpty()) {
+		
+		if (this.informations.isEmpty()) 
 			this.informations.add(information);	
-		} else
-			System.out.println("array pieno"); //lancia eccezione?
+		else
+			System.out.println("Array pieno"); //lancia eccezione?
 	}	
 	
-	public boolean getType() {//preconditions array non vuoto
+	//pre: array non vuoto
+	
+	public boolean getType() {
 		return this.informations.get(0).isOnOffType();
 	}
 	
