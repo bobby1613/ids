@@ -3,7 +3,7 @@ package ids.project.v1;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Maintainer implements User {
+public class Maintainer implements User { 
 	
 
 	@Override
