@@ -5,7 +5,7 @@ import java.util.Random;
 
 
 public class HomeMain {
-	
+	private final static String provGIT="oal";
 	public static void main(String[] args) {
 		
 		//CategoryActuator a = new CategoryActuator("fuoco", "123");

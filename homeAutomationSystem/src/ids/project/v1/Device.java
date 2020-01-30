@@ -6,4 +6,5 @@ public interface Device {
 //	public void setOff();
 	public boolean status();
 	public String toString();
+	
 }
