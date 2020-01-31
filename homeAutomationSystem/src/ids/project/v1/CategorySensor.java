@@ -21,8 +21,10 @@ public class CategorySensor extends Category {
 			System.out.println("Array pieno"); //lancia eccezione?
 	}	
 	
-	//pre: array non vuoto
-	
+	/**
+	 * Restituisce true se si tratta di un sensore di tipo on/off, altrimenti false
+	 * @return
+	 */
 	public boolean getType() {
 		return this.informations.get(0).isOnOffType();
 	}

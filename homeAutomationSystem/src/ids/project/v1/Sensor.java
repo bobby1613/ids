@@ -8,6 +8,7 @@ package ids.project.v1;
  */
 
 import java.util.Random;
+import ids.project.myclass.*;
 
 public class Sensor implements Device {
 
@@ -16,7 +17,8 @@ public class Sensor implements Device {
 	private boolean state = true;
 	private String infoConstructor; //LUNGHEZZA MASSIMA
 	private int id;
-	private static final Random rand = new Random();
+	
+	
 	
 	public Sensor(String name, String infoConstructor, int id, CategorySensor category) {
 		
@@ -100,7 +102,7 @@ public class Sensor implements Device {
 	 */
 	public boolean checkObstacle() { //precondizione categoria:on off
 		if(this.category.getType()) {
-			return this.rand.nextBoolean();
+			return InputOutput.randomBoolean();
 		}
 		else return false;//CONTROLLA		
 	}
