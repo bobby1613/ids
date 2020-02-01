@@ -7,7 +7,16 @@ import java.util.Random;
 public class HomeMain {
 	private final static String provGIT="oal";
 	public static void main(String[] args) {
+		boolean t =true;
+		boolean f=false;
+		boolean x;
+		if(!t)
+			x=true;
+		else
+			x=false;
+			
 		
+		System.out.println(x);
 		//CategoryActuator a = new CategoryActuator("fuoco", "123");
 		//System.out.println(a.getNameCategory());
 		//System.out.println(a.getGenericInfo());
@@ -16,8 +25,8 @@ public class HomeMain {
 		//System.out.println(x.getName());
 		//Random rd = new Random();
 		//System.out.println(rd.nextBoolean());
-		Maintainer m = new Maintainer();
-		m.login();
+		//Maintainer m = new Maintainer();
+		//m.login();
 		
 	}
 }

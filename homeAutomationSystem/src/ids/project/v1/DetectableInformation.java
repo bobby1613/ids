@@ -3,6 +3,7 @@ package ids.project.v1;
  * La classe DetectableInformation suddivide il tipo di informazione rilevata da una determinata categoria di sensori in due tipi:
  * grandezza fisica a sensore semplice on/off (aperto chiuso). Essi sono identificati dagli attributi booleani phisicalDimension e onOff i quali 
  * non posssono valere entrambi true contemporaneamente.
+ * 
  * @author bobby
  *
  */
@@ -14,29 +15,17 @@ public class DetectableInformation {
 		private boolean onOff;
 		private boolean dimensional;
 		private String symbol;
+		private double minValue;
+		private double maxValue;
 		
 		public static final String PERCENT="'%";
 		
 		/**
-		 * Costruttore di default
-		 */
-		public DetectableInformation() {
-			
-			name = null;
-			physicalDimension = false;
-			onOff = false;
-			dimensional = false;
-			symbol = null;
-			
-		}
-		
-		/**
-		 * Costruttore di un oggetto DetectableInformation che prende come parametri nome e tipo informazione
+		 * Costruttore di un oggetto DetectableInformation che prende come parametri nome e il booleano physicalDimension
 		 * @param name
 		 * @param physicalDimension se quest'ultimo vale "true", onOff vale "false" e viceversa
 		 */
 		public DetectableInformation(String name, boolean physicalDimension) {	
-			
 			this.name = name;
 				this.physicalDimension = physicalDimension;
 				if (physicalDimension == true) 
@@ -60,7 +49,6 @@ public class DetectableInformation {
 		 * @param name
 		 */
 		public void setName(String name) {
-			
 			this.name = name;
 		}
 		
@@ -69,16 +57,18 @@ public class DetectableInformation {
 		 * @return physicalDimension
 		 */
 		public boolean isPhysicalDimensionType() {
-			
 			return physicalDimension;
 		}
 		
+		public void setMinValue(float minValue) {//altrimenti impostare eccezione?
+			if (this.physicalDimension)
+				this.minValue=minValue;
+		}
 		/**
 		 * 
 		 * @return onOff
 		 */
 		public boolean isOnOffType() {
-			
 			return onOff;
 		}
 		
@@ -87,7 +77,6 @@ public class DetectableInformation {
 		 * @return dimensional
 		 */
 		public boolean isDimensional() {
-			
 			return dimensional;
 		}
 		
@@ -105,7 +94,6 @@ public class DetectableInformation {
 		 * @param symbol
 		 */
 		public void setSymbol(String symbol) {  //verificare che sia grandezza fisica prima???
-			
 			if (this.dimensional == true)
 				this.symbol = symbol;
 			else
@@ -118,6 +106,26 @@ public class DetectableInformation {
 		 */
 		public String getSymbol() {
 			return this.symbol;
+		}
+		
+		
+		public boolean valuesComplete() {
+			if ((this.physicalDimension) && (this.minValue!=))
+		}
+		/**
+		 * Verifica che l'oggetto DetectableInformation sia stato costruito e/o settato completamente
+		 * @return
+		 */
+		public boolean informationComplete() {
+			boolean xorType=((this.physicalDimension && !this.onOff) || (!this.physicalDimension && this.onOff));
+			
+			if (this.name==null)
+				return false;
+			
+			if (!xorType)
+				return false;
+			
+
 		}
 
 		@Override

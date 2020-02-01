@@ -3,7 +3,7 @@ package ids.project.v1;
 public abstract class Category {
 
 	private String nameCategory; //IMPOSTA LUNGHEZZA MASSIMA E UNIVOCITA
-	private String genericInfo; //IMPOSTA LUNGHEZZA MASSIMA
+	private String genericInfo; //IMPOSTA LUNGHEZZA MASSIM
 	
 	public Category(String nameCategory, String infoConstructor) {
 		
