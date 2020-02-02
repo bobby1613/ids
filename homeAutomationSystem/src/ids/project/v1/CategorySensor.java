@@ -2,13 +2,12 @@ package ids.project.v1;
 
 import java.util.ArrayList;
 
-public class CategorySensor<T> extends Category {//genericooooooo?????
+public class CategorySensor<T extends Information> extends Category {
 		
-	private ArrayList<DetectableInformation> informations;
+	private ArrayList<T> informations;
 	
 	
 	public CategorySensor(String nameCategory, String infoConstructor) {
-		
 		super(nameCategory, infoConstructor);
 	}
 	
