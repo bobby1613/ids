@@ -43,7 +43,7 @@ public class Sensor implements Device {
 		
 		if (this.category == null) {
 			this.category = category;
-			this.name = this.name+"_" + this.category.getNameCategory();		
+			this.name = this.name + "_" + this.category.getNameCategory();		
 			}
 		else
 			System.out.println("Categoria gia impostata");//ECCEZIONE
@@ -111,7 +111,7 @@ public class Sensor implements Device {
 	 * @return
 	 */
 	public double instaMeasure() { //precondizione categoria:grandezza fisica
-		return 1.0  ; //ASSEGNA CASUALMENTE
+		return Math.random()*100 ; //ASSEGNA CASUALMENTE un valore tra 0.1 e 1.0, moltiplicato per 100!
 	}
 	
 	

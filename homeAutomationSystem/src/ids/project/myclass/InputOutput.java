@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 
 public final class InputOutput {
+	
 	private static Scanner lettore = creaScanner();
 
 	private final static String ERRORE_FORMATO = "Errore: il dato inserito non e' nel formato corretto";

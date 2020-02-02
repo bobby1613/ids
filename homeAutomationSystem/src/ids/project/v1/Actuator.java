@@ -5,27 +5,29 @@ package ids.project.v1;
  * @author bobby
  *
  */
+
+
 public class Actuator implements Device {
 	
 	private CategoryActuator category;
 	private String name;
 	private boolean state = true; // nella prima versione gli attuatori devono essere sempre attivi
-	private String infoConstructor; //LUNGHEZZA MASSIMA
+	private String[] infoConstructor; //LUNGHEZZA MASSIMA
 	private int id;
 	
-	public Actuator (String name, String infoConstructor, int id, CategoryActuator category) {
+	public Actuator (String name, int id, CategoryActuator category) {
 		
-		this.name=name + "_" + category.getNameCategory();
-		this.infoConstructor = infoConstructor;
+		this.name = name + "_" + category.getNameCategory();
+		infoConstructor = new String[180];
 		this.id = id;
 		this.category = category;
 		 
 	}
 	
-	public Actuator (String name, String genericInfo, int id) {
+	public Actuator (String name, int id) {
 		
 		this.name = name;
-		this.infoConstructor = genericInfo;
+		infoConstructor = new String[180];
 		this.id = id;
 	}
 	
@@ -42,9 +44,10 @@ public class Actuator implements Device {
 	 * @param category
 	 */
 	public void setCategory(CategoryActuator category) {
-		if (this.category==null) {
-			this.category=category;
-			this.name=this.name+"_" + this.category.getNameCategory();		
+		
+		if (this.category == null) {
+			this.category = category;
+			this.name = this.name + "_" + this.category.getNameCategory();		
 			}
 		else
 			System.out.println("la categoria gia impostaaaaata");//ECCEZIONE
@@ -61,7 +64,7 @@ public class Actuator implements Device {
 	 * 
 	 * @return infoConstructor
 	 */
-	public String getInfoConstructor() {
+	public String[] getInfoConstructor() {
 		return this.infoConstructor;
 	}
 	

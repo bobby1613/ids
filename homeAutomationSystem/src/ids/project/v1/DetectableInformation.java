@@ -26,8 +26,9 @@ public class DetectableInformation {
 		 * @param physicalDimension se quest'ultimo vale "true", onOff vale "false" e viceversa
 		 */
 		public DetectableInformation(String name, boolean physicalDimension) {	
+			
 			this.name = name;
-				this.physicalDimension = physicalDimension;
+			this.physicalDimension = physicalDimension;
 				if (physicalDimension == true) 
 					this.onOff = false;
 				else if(physicalDimension == false)
@@ -94,6 +95,7 @@ public class DetectableInformation {
 		 * @param symbol
 		 */
 		public void setSymbol(String symbol) {  //verificare che sia grandezza fisica prima???
+			
 			if (this.dimensional == true)
 				this.symbol = symbol;
 			else
@@ -109,21 +111,24 @@ public class DetectableInformation {
 		}
 		
 		
-		public boolean valuesComplete() {
-			if ((this.physicalDimension) && (this.minValue!=))
-		}
+		//public boolean valuesComplete() {
+		//	if ((this.physicalDimension) && (this.minValue != ));
+		//}
 		/**
 		 * Verifica che l'oggetto DetectableInformation sia stato costruito e/o settato completamente
 		 * @return
 		 */
 		public boolean informationComplete() {
-			boolean xorType=((this.physicalDimension && !this.onOff) || (!this.physicalDimension && this.onOff));
 			
-			if (this.name==null)
+			boolean xorType = ((this.physicalDimension && !this.onOff) || (!this.physicalDimension && this.onOff));
+			
+			if (this.name == null)
 				return false;
 			
 			if (!xorType)
 				return false;
+			
+			return true;
 			
 
 		}
